@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<Client>
+@{
+    ViewData["Title"] = "Liste des Clients";
+}
+
+<h2>Liste des Clients</h2>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Ajouter</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Ville</th>
+            <!-- Ajoutez d'autres colonnes en fonction des propriétés du modèle Client -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.Id</td>
+                <td>@client.Nom</td>
+                <td>@client.Prenom</td>
+                <td>@client.Ville</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@client.Id">Éditer</a> |
+                    <a asp-action="Delete" asp-route-id="@client.Id">Supprimer</a>
+                </td>
+                <!-- Ajoutez d'autres colonnes en fonction des propriétés du modèle Client -->
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!-- Views/Client/Delete.cshtml -->
+@model EntityFrameworkClass.Models.Client
+
+@{
+    ViewData["Title"] = "Supprimer un Client";
+}
+
+<h2>Supprimer un Client</h2>
+
+<h3>Êtes-vous sûr de vouloir supprimer le client suivant?</h3>
+<div>
+    <h4>Informations sur le client:</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Id
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Id
+        </dd>
+
+        <dt class="col-sm-2">
+            Nom
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Nom
+        </dd>
+
+        <dt class="col-sm-2">
+            Prenom
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Prenom
+        </dd>
+
+        <dt class="col-sm-2">
+            Ville
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Ville
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteConfirmed" asp-route-id="@Model.Id" method="post">
+        <div class="form-group">
+            <input type="submit" value="Supprimer" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+@model EntityFrameworkClass.Models.Client
+
+@{
+    ViewData["Title"] = "modifier un Client";
+}
+
+<h2>modifier un Client</h2>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label asp-for="Nom"></label>
+        <input asp-for="Nom" class="form-control" />
+        <span asp-validation-for="Nom" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Prenom"></label>
+        <input asp-for="Prenom" class="form-control" />
+        <span asp-validation-for="Prenom" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Ville"></label>
+        <input asp-for="Ville" class="form-control" />
+        <span asp-validation-for="Ville" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
